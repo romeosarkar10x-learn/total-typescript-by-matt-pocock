@@ -1,0 +1,19 @@
+Incomplete:
+* 017-splitting-strings.ts
+* 046-deep-partial.ts
+
+Questions:
+* Convert a union type to a tuple of the corresponding types
+
+Example:
+type X = number | string | boolean | 1 | 2;
+
+type Y = Convert<X>
+Y should be [number, string, boolean, 1, 2];
+
+Doubts:
+type Test<T> = {
+    [Key in keyof T]: [Key, T[Key]];
+};
+
+How does this work for tuples?
